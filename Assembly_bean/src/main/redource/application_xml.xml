@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--通过byName按名字来装配，使用<property>标签来设置属性值-->
+    <!--<bean name = "school" class="com.test.assembly_bean.school.School1">
+        &lt;!&ndash;通过<property> 来设置bean属性&ndash;&gt;
+        <property name="address" value="北京"></property>
+        <property name="name" value="北京大学"></property>
+    </bean>
+
+    <bean name="dao" class="com.test.assembly_bean.dao.dao1_xml" autowire="byName">&lt;!&ndash;byName 按名称装配bean&ndash;&gt;
+        &lt;!&ndash;通过<property> 来设置bean属性&ndash;&gt;
+        <property name="name" value="欢"></property>
+        <property name="id" value="111"></property>
+        <property name="sno" value="1212312"></property>
+        &lt;!&ndash;通过set方法传bean&ndash;&gt;
+        &lt;!&ndash;<property name = "school" ref="student"></property>&ndash;&gt;
+    </bean>-->
+    <!--通过byType按类型来装配使用,<property>标签来设置属性值-->
+    <bean name = "school1" class="com.test.assembly_bean.school.School1">
+        <!--通过<property> 来设置bean属性-->
+        <property name="address" value="北京"></property>
+        <property name="name" value="北京大学"></property>
+    </bean>
+
+    <bean name="dao" class="com.test.assembly_bean.dao.dao1_xml" autowire="byType"><!--byName 按名称装配bean-->
+        <!--通过<property> 来设置bean属性-->
+        <property name="name" value="欢"></property>
+        <property name="id" value="111"></property>
+        <property name="sno" value="1212312"></property>
+        <!--通过set方法传bean-->
+        <!--<property name = "school" ref="student"></property>-->
+    </bean>
+
+
+</beans>
