@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean name = "school" class="com.test.study.dao2.dao2_school2"></bean>
+    <!--通过setter方法实现依赖,需要使用<property>标签-->
+    <bean name = "dao" class="com.test.study.dao1.dao1_student2">
+        <property name="school" ref = "school"></property>
+    </bean>
+
+</beans>
