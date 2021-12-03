@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean name = "school" class="com.test.study.dao2.dao2_school1"></bean>
+    <!--构造器实现依赖注入，调用dao1_student1里的有参构造方法-->
+    <!--方式一-->
+    <bean name="dao" class="com.test.study.dao1.dao1_student1">
+        <constructor-arg ref="school"></constructor-arg>
+    </bean>
+    <!--方式二-->
+    <bean name = "dao" class="com.test.study.dao1.dao1_student1">
+        <constructor-arg name = "school" ref="school"></constructor-arg>
+    </bean>
+    <!--方式三-->
+    <bean name = "dao" class = "com.test.study.dao1.dao1_student1">
+        <constructor-arg index="0" ref="school"></constructor-arg>
+    </bean>
+</beans>
