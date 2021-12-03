@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?><!--配置文件-->
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 引入外部独立的资源文件 -->
+    <properties resource="mybatis.properties"/>
+    <!-- 配置mybatis运行环境 -->
+    <environments default="development">
+        <!--environments-用于获取连接池连接，将来与spring整合时，这个就不要啦，由spring来配置数据库连接。-->
+        <environment id="development">
+            <!-- 使用原生 JDBC 事务 -->
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!-- 将mapper文件加入到配置文件中 -->
+    <mappers>
+        <mapper resource="StudentMapper.xml"/>
+    </mappers>
+</configuration>
